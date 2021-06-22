@@ -32,6 +32,7 @@ placeholder(word);
 
 guessButton.addEventListener("click", function (e){
     e.preventDefault();
-    const inputLetter = document.inputGuess.value;
+    const inputLetter = inputGuess.value;
     console.log(inputLetter);
-})
+    inputGuess.value = "";
+});
