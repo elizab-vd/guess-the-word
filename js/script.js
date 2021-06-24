@@ -18,7 +18,6 @@ const word = "magnolia";
     //starting word to test game
 
 
-    //STILL HAVE QUESTIONS ABOUT THE CIRCLES
 const placeholder = function (word) {
     const placeholderCircles = [];
     for (const letter of word) {
@@ -36,3 +35,16 @@ guessButton.addEventListener("click", function (e){
     console.log(inputLetter);
     inputGuess.value = "";
 });
+
+const validateInput = function (input) {
+    const acceptedLetter = /[a-zA-Z]/;
+    if(input.length === 0){
+        message.innerText = "Please enter a letter.";
+    } else if(input.length > 1){
+        message.innerText = "Please enter a single letter.";
+    } else if(!input.match(acceptedLetter)){
+        message.innerText = "Please enter a letter from A to Z.";
+    } else {
+        return input;
+    }
+};
